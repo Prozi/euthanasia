@@ -13,11 +13,10 @@ function getMemoryUsage() {
 module.exports = function euthanasia(
   memory = 0,
   interval = MINUTE,
-  onExit = () => {}
+  ready = () => true
 ) {
   const check = () => {
-    if (getMemoryUsage() > memory) {
-      onExit()
+    if (getMemoryUsage() > memory && ready()) {
       process.exit(0)
     }
   }
