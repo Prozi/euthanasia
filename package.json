@@ -1,9 +1,16 @@
 {
   "name": "euthanasia",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "when your node.js process uses too much memory, allow it to gracefully exit",
   "main": "index.js",
   "types": "index.d.ts",
+  "keywords": [
+    "memory-management",
+    "node-js",
+    "graceful-shutdown",
+    "oom",
+    "out-of-memory"
+  ],
   "scripts": {
     "test": "node index.spec.js"
   },
