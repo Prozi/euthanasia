@@ -1,0 +1,11 @@
+{
+  "name": "euthanasia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.spec.js"
+  },
+  "author": "Jacek Pietal <github.com/Prozi>",
+  "license": "MIT"
+}
