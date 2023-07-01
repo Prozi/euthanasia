@@ -1,11 +1,12 @@
 {
   "name": "euthanasia",
   "version": "1.0.0",
-  "description": "",
+  "description": "when your node.js process uses too much memory, allow it to gracefully exit",
   "main": "index.js",
   "scripts": {
     "test": "node index.spec.js"
   },
   "author": "Jacek Pietal <github.com/Prozi>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "git://github.com/Prozi/euthanasia.git"
 }
