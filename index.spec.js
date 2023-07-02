@@ -1,3 +1,1 @@
-require(".")(0, 0, () => {
-  console.log("success")
-})
+require(".")(0, 0)

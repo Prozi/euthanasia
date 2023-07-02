@@ -2,6 +2,6 @@ declare module "euthanasia" {
   export default function euthanasia(
     memory: number,
     interval: number,
-    ready: () => boolean
+    ready: (usage: number) => Promise<boolean>
   ): void
 }
