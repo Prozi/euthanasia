@@ -1,6 +1,6 @@
 {
   "name": "euthanasia",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "when your node.js process uses too much memory, allow it to gracefully exit",
   "main": "index.js",
   "types": "index.d.ts",

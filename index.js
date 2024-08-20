@@ -1,14 +1,14 @@
-const TO_MEGABYTE = 1 / 1024 / 1024
-const DEFAULT_MEMORY = 0
-const DEFAULT_MINUTE_INTERVAL = 60 * 1000
+const TO_MEGABYTE = 1 / 1024 / 1024;
+const DEFAULT_MEMORY = 0;
+const DEFAULT_MINUTE_INTERVAL = 60 * 1000;
 const DEFAULT_READY = (usage) => {
-  console.info(`[OOM] Sorry but you used ${usage} MB`)
+  console.info(`[OOM] Sorry but you used ${usage} MB`);
 
-  return true
-}
+  return true;
+};
 
 function getMemoryUsage() {
-  return Math.round(process.memoryUsage().heapUsed * TO_MEGABYTE)
+  return Math.round(process.memoryUsage().heapUsed * TO_MEGABYTE);
 }
 
 /**
@@ -23,15 +23,15 @@ function euthanasia(
   ready = DEFAULT_READY
 ) {
   const check = async () => {
-    const usage = getMemoryUsage()
-    const oom = usage > memory
+    const usage = getMemoryUsage();
+    const oom = usage > memory;
 
     if (oom && (await ready(usage))) {
-      process.exit(0)
+      process.exit(0);
     }
-  }
+  };
 
-  setInterval(check, interval)
+  setInterval(check, interval);
 }
 
-module.exports = euthanasia
+module.exports = euthanasia;
