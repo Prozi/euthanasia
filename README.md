@@ -7,19 +7,23 @@ when your node.js process uses too much memory, allow it to gracefully exit
 ```js
 const euthanasia = require('euthanasia');
 
-// if you need to do some cleanup you do it in an async ready function
-// usage is in MB just like the first parameter of default function
-const ready = async (usage) => {
-  // whatever to want do after memory used > 256 MB
-  console.info(`[OOM] Sorry but you used ${usage} MB`);
-
-  // return false here to still keep on livin'
-  // for example there are still connected active users
-  return true;
-};
-
-// check is memory usage > than 256 MB, every minute
-euthanasia(256, 60 * 1000, ready);
+euthanasia({
+  memory: 100,      // 100 MB limit
+  cpu: 80,          // 80% CPU limit
+  interval: 10000,  // check every 10 seconds
+  // called when either memory or CPU limit is exceeded
+  ready: async ({ memory, cpu }) => {
+    // your logic here
+    if (memory) {
+      console.log(`Memory limit exceeded: ${memory} MB`);
+    }
+    if (cpu) {
+      console.log(`CPU limit exceeded: ${cpu.toFixed(2)}%`);
+    }
+    // You can return false to skip exit (e.g., wait for cleanup)
+    return true;
+  }
+});
 ```
 
 ## install:

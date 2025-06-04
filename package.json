@@ -1,20 +1,31 @@
 {
   "name": "euthanasia",
-  "version": "1.4.0",
-  "description": "when your node.js process uses too much memory, allow it to gracefully exit",
+  "version": "2.0.0",
+  "description": "Gracefully exits a Node.js process when memory or CPU usage exceeds defined thresholds. Supports customizable exit logic via async hooks.",
   "main": "index.js",
   "types": "index.d.ts",
   "keywords": [
-    "memory-management",
-    "node-js",
+    "nodejs",
+    "memory",
+    "cpu",
+    "resource-monitoring",
+    "graceful-exit",
     "graceful-shutdown",
     "oom",
-    "out-of-memory"
+    "out-of-memory",
+    "high-cpu",
+    "self-terminate",
+    "process-exit",
+    "resource-limits",
+    "watchdog"
   ],
   "scripts": {
-    "test": "node index.spec.js"
+    "test": "npx jest"
   },
   "author": "Jacek Pietal <github.com/Prozi>",
   "license": "MIT",
-  "repository": "git://github.com/Prozi/euthanasia.git"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Prozi/euthanasia.git"
+  }
 }
