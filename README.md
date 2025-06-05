@@ -1,6 +1,6 @@
 # euthanasia
 
-when your node.js process uses too much memory, allow it to gracefully exit
+when your node.js process uses too much memory or cpu, allow it to gracefully exit
 
 ## usage:
 
